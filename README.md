@@ -6,3 +6,6 @@ First In order we have created -
   2) train file 
   3) model file 
   4) chat file - combining all the files together to make a working chat bot model on terminal . 
+  
+  
+  STEP BY STEP EXPLAINATION OF ALL LINES IS GIVEN IN CODE AS OF COMMENT IF U HAVE ANY QUERY PLZ COMMENT . 
