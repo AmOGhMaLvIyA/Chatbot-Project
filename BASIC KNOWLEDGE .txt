@@ -1,0 +1,117 @@
+pytorch  - A framework for deep learning models basically used for nlp and image processing .
+back end framework / can be integrated with vue.js and react js
+optimised library from tensor based on python and torch 
+more flexible than tensorflow 
+
+torch- torch is a Python library that provides support for building and training deep neural networks. 
+It is primarily used for machine learning tasks, especially in the fields of computer vision and natural language processing. 
+torch is built on top of the C++ library called libtorch,
+
+torch features --->
+
+* tensor operations 
+* automatic differentiation - uses automatic gradient that automatically computes gradients of functions and
+ allows the gradients of the loss function with respect to the network parameters to be computed efficiently.
+* helps in making complex networks with multiple models .
+
+
+DIFFERENCE BETWEEN TORCH AND PYTORCH 
+
+PyTorch is a specific implementation of the torch library. PyTorch is built on top of the torch library, 
+and both libraries share many of the same underlying components.
+
+torch, on the other hand, is a more general-purpose machine learning library that is written in C++, 
+and can be used with a variety of programming languages, including Python
+
+
+this chatbot we will be using basic feed forward neural network with 2 hidden layers 
+
+
+
+Some Basic Concepts for this model - 
+
+Bag of words - method for representing text data as a collection (or "bag")
+of individual words, without regard to their order or context.
+approach involves first tokenizing a text into individual words
+and then , then counting the frequency of each word in the text. This results in a sparse vector that represents the text, 
+where each dimension of the vector corresponds to a unique word in the text, 
+and the value in each dimension represents the frequency of that word in the text.
+
+USED FOR TEXT CLASSIFICATION AND SENTIMENT ANALYSIS
+
+LIMITATION - DOES NOT TAKE ACCOUNT OF THE ORDER OF THE WORDS
+
+
+NLP pre-processing basics - 
+
+1) tokenization - splitting a string into meaninngful units or mathcing patterns that we have provided 
+in the json data training file . nltk (punkt) - a pre-tokenizer package
+
+
+2) STEMMING - generates the root form of the word . 
+eg. oragnize,oraganizes , organization - root word will be " organ ".
+* BE CAREFUL TO USE IT TO THAT EXTENT TILL IT DOESNT LOOSES IT ORIGINAL MEANING OF THE WORD 
+
+
+Ways by which we can reduce stemming so that is doesnt looses its meaning -
+ 1) Selecting a proper stemming algo of lower level .
+ 2) use lemmetiztion 
+ 3) defining a exception list of words . 
+ 
+
+
+TORCH.NN - module in the PyTorch library that provides support for building and training neural networks
+ torch.nn makes it easy to create complex neural network architectures for a wide variety of machine learning tasks.
+
+ Dataset in torch -  class is an abstract class that represents a dataset. It provides a consistent API for accessing individual data samples in the dataset,
+ regardless of the specific format or storage mechanism used for the data
+
+Dataloader -  class is used to load data from a dataset in batches. It provides a convenient way to iterate over the dataset in batches, 
+shuffle the data, and load the data in parallel using multiple worker threads.
+
+
+ENUMERATE () -  is a function in Python that helps you loop over an iterable (like a list or tuple) 
+while also keeping track of the index of the item you're currently iterating over.
+
+batch_size = the number of training examples used in one forward/backward pass of the neural network during the training process
+The batch size can have a significant impact on the training process. A larger batch size can lead to more stable gradients and
+ faster convergence, but also requires more memory and computation. A smaller batch size, 
+on the other hand, can use less memory and computation, but may result in less stable gradients and slower convergence.
+
+Gradient - Gradients are a way to measure how much a function (in the case of machine learning, the loss function) changes with respect to its parameters. 
+In other words, the gradient tells us how sensitive the output of the function is to changes in the input parameters. During training, the gradient of the loss
+ function with respect to the model's parameters is computed, and the parameters are updated in the direction that reduces the loss.
+
+
+Convergence - Convergence, on the other hand, refers to the point in the training process where the model's 
+parameters have reached an optimal or near-optimal state, and the loss function is no longer decreasing significantly. 
+
+
+PORTER_STEMMER - 
+RULE BASED ALGO works on principle of suffix removal 
+   * The input word is first divided into a stem and a suffix. The suffix is the part of the word that comes after the stem and contains information about its tense, number, or case.
+
+   * The Porter stemmer applies a set of rules in a specific order to remove common suffixes from the input word. For example, it may remove the 
+ 	"s" from the end of a plural noun, the "ed" from the end of a past tense verb, or the "ly" from the end of an adverb.
+
+   * After applying a rule, the stemmer checks if the resulting stem is valid. If the stem is not valid, the algorithm proceeds to the next rule.
+
+   * The stemmer continues to apply rules and check the validity of the resulting stems until it reaches the end of the rule set or the stem cannot be reduced any further.
+
+   * Finally, the resulting stem is returned as the output of the algorithm.
+
+
+
+Cross ENTROPY loss -commonly used loss function in classification tasks, particularly in neural network models. It measures the difference between the predicted probability distribution and the true probability distribution of the target labels.
+
+
+Internal functioning     The model takes an input and produces a probability distribution over the classes, typically using the softmax activation function in the output layer.
+
+    The true class labels are represented as a one-hot encoded vector, where the index of the true class is assigned the value 1 and all other indices are assigned the value 0.
+
+    The cross entropy loss function compares the predicted probability distribution to the true probability distribution, which is the one-hot encoded vector. It computes a scalar value that measures the difference between the two distributions.
+
+    The goal of training the neural network is to minimize the cross entropy loss over the training data. This is typically done using gradient descent or a similar optimization algorithm.
+
+ 
+
