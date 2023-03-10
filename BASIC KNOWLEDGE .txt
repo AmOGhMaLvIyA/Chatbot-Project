@@ -113,5 +113,25 @@ Internal functioning     The model takes an input and produces a probability dis
 
     The goal of training the neural network is to minimize the cross entropy loss over the training data. This is typically done using gradient descent or a similar optimization algorithm.
 
- 
+-------------------------------------------------------------------------------------
+
+MODEL FILE EXPLANATION 
+
+ super(NeuralNet,self).__init__()-way to call the constructor of the parent class nn.Module. This is necessary in order to properly initialize the model and its parameters, as nn.Module
+
+self.l1=nn.Linear(input_size,hidden_size) - creates a linear layer in PyTorch with input_size input neurons and hidden_size output neurons, and assigns it to the instance variable self.l1.self.l1 represents the first linear layer of the neural network, which takes an input tensor of shape (batch_size, input_size) and outputs a tensor of shape (batch_size, hidden_size).
+
+nn.linear - nn.Linear module in PyTorch applies a linear transformation to the input data, which is simply a matrix multiplication of the input tensor with a weight matrix, followed by addition of a bias term.
+
+similarly all the later 2 hidden layers acan be identified as of the (hidden_size,hidden_size) which are using activation function relu .
+
+
+
+out = self.l1(x) applies the first linear layer (self.l1) of the neural network to the input tensor x.
+* When self.l1 is applied to x, it performs a matrix multiplication of the input tensor with a weight matrix, followed by addition of a bias term. This produces an intermediate output tensor of shape (batch_size, hidden_size).
+* The resulting tensor out contains the outputs of the first layer of the neural network. These outputs will be passed through a non-linear activation function (ReLU in this case) before being fed into the next layer of the network.
+
+
+IN THIRD OUT we have not used the AF because we dont have the requirement of multiclass classification . 
+
 
