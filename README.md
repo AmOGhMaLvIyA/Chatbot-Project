@@ -8,4 +8,5 @@ First In order we have created -
   4) chat file - combining all the files together to make a working chat bot model on terminal . 
   
   
-  STEP BY STEP EXPLAINATION OF ALL LINES IS GIVEN IN CODE AS OF COMMENT IF U HAVE ANY QUERY PLZ COMMENT . 
+  STEP BY STEP EXPLAINATION OF ALL LINES IS GIVEN IN CODE AS OF COMMENT IF U HAVE ANY QUERY PLZ COMMENT . --
+  Second update - 15 - 03 - 2023 --> documentation updated and train file comments (added better explaination of few lines like NN line which is using class NN from model )
