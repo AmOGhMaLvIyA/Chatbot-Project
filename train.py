@@ -13,11 +13,11 @@ from model import NeuralNet
 with open('intents.json','r') as f :
     intents=json.load(f)
 
-# print(intents) checking the dataset once
+#print(intents) #checking the dataset once
 
 all_words=[]#for collecting all the words 
 tags=[]#for collecting all the differrent types of words or sentiments of words 
-xy=[]#to hold aboth of the patterns and its corresponding pattern later in the code 
+xy=[]#to hold both of the patterns and its corresponding pattern later in the code 
 
 for intent in intents['intents']:
     tag=intent['tag']
@@ -84,10 +84,11 @@ train_loader = DataLoader(dataset=dataset , batch_size=batch_size ,shuffle=True 
 #function made to direct all the existing dataset to be processed in GPU and hence asking the device first 
 # whether the gpu is avilable or not 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = NeuralNet(input_size,hidden_size,output_size)
+model = NeuralNet(input_size,hidden_size,output_size)#it is now creating an instance of NN class and creating an instance of __init__ function 
+#which is defing the layers of model and using relu function on them as it moves forward to other layer .
 
 
-# CREARTION OF LOSS FUNCTION AND OPTIMIZER FOR THE MODEL
+# CREATION OF LOSS FUNCTION AND OPTIMIZER FOR THE MODEL
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(),lr=learning_rate)
  
