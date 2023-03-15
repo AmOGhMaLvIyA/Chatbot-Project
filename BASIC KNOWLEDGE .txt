@@ -1,5 +1,7 @@
+LIBRARIS USED --> 
+
 pytorch  - A framework for deep learning models basically used for nlp and image processing .
-back end framework / can be integrated with vue.js and react js
+back end framework which can be integrated with vue.js and react js
 optimised library from tensor based on python and torch 
 more flexible than tensorflow 
 
@@ -10,8 +12,7 @@ torch is built on top of the C++ library called libtorch,
 torch features --->
 
 * tensor operations 
-* automatic differentiation - uses automatic gradient that automatically computes gradients of functions and
- allows the gradients of the loss function with respect to the network parameters to be computed efficiently.
+* automatic differentiation - uses automatic gradient that automatically computes gradients of functions and allows the gradients of the loss function with respect to the network parameters to be computed efficiently.
 * helps in making complex networks with multiple models .
 
 
@@ -24,9 +25,20 @@ torch, on the other hand, is a more general-purpose machine learning library tha
 and can be used with a variety of programming languages, including Python
 
 
-this chatbot we will be using basic feed forward neural network with 2 hidden layers 
+##this chatbot we will be using basic feed forward neural network with 2 hidden layers ##
 
 
+
+NLTK - NLTK (Natural Language Toolkit) is a popular open-source Python library used for natural language processing (NLP).
+* 	NLTK was developed by Steven Bird, Edward Loper, and Ewan Klein at the University of Pennsylvania and was first released in 2001.
+* 	A corpus (plural corpora) is a collection of text or speech data that is used as a source of linguistic information for NLP tasks. A corpus can be comprised of various types of data, such as books, news articles, social media posts, or even spoken conversations.
+
+*	A lexicon is a collection of words or phrases that are organized based on their meanings, parts of speech, or other linguistic features. Lexicons are often used to provide additional information for NLP tasks, such as sentiment analysis or named entity recognition.	
+
+
+
+NUMPY - Python library used for scientific computing and data analysis. NumPy provides efficient multidimensional arrays (ndarrays) and mathematical functions for working with those arrays.
+-------------------------------------------------------------------------------------------
 
 Some Basic Concepts for this model - 
 
@@ -36,6 +48,8 @@ approach involves first tokenizing a text into individual words
 and then , then counting the frequency of each word in the text. This results in a sparse vector that represents the text, 
 where each dimension of the vector corresponds to a unique word in the text, 
 and the value in each dimension represents the frequency of that word in the text.
+
+(SPARSE VECTOR - vector where most of the elements are zero. In other words, a sparse vector is a vector that has only a few non-zero elements relative to its total number of elements.)
 
 USED FOR TEXT CLASSIFICATION AND SENTIMENT ANALYSIS
 
@@ -105,7 +119,7 @@ RULE BASED ALGO works on principle of suffix removal
 Cross ENTROPY loss -commonly used loss function in classification tasks, particularly in neural network models. It measures the difference between the predicted probability distribution and the true probability distribution of the target labels.
 
 
-Internal functioning     The model takes an input and produces a probability distribution over the classes, typically using the softmax activation function in the output layer.
+Internal functioning  -  The model takes an input and produces a probability distribution over the classes, typically using the softmax activation function in the output layer.
 
     The true class labels are represented as a one-hot encoded vector, where the index of the true class is assigned the value 1 and all other indices are assigned the value 0.
 
@@ -113,7 +127,58 @@ Internal functioning     The model takes an input and produces a probability dis
 
     The goal of training the neural network is to minimize the cross entropy loss over the training data. This is typically done using gradient descent or a similar optimization algorithm.
 
+
+
+
+Now , some basic concept of OOPS will be used to make a class here of Chatdataset which is using or being used only once dataset is passed into it that is it is a parameterized class .
+
+self keyword -  The keyword self represents the instance of a class and binds the attributes with the given arguments.  When an instance method is called, "self" is implicitly passed as the first argument, and it allows the method to access and modify the instance's attributes.
+
+__init__ --> The python __init__ is a reserved method in Python that behaves like any other member function of the class, except the statements written under its definition are used to initialize the data members of a class in Python, i.e. it basically contains assignment statements. This method is automatically called at the time of class instantiation or object creation. 
+
+
+
+HYPERPARAMETERS - hyperparameters are settings that are external to the network architecture and are not learned from the data during the training process. They control various aspects of the training process and affect the performance and behavior of the network.
+
+1) batch size -Batch size: Determines how many examples are used in each training iteration.
+
+2) hidden size - the hidden size refers to the number of neurons in the hidden layer of the network.
+note ---> A larger hidden size allows the network to learn more complex and nuanced relationships between the input features and the output, but also increases the risk of overfitting. On the other hand, a smaller hidden size can result in underfitting, where the network is not able to capture enough of the relevant information in the input data.
+
+3) input size - it determines the dimensions of the input layer of the network , if the input data is images, the input size will be determined by the resolution of the images (e.g., 28x28 pixels for MNIST images). If the input data is text, the input size will be determined by the size of the vocabulary and the length of the input sequences.
+
+4) output size - responsible for producing the final output of the network, which can take different forms depending on the problem being solved. For example, the output of a binary classification problem will have a size of 1 (representing the probability of belonging to one class or the other), while the output of a multi-class classification problem will have a size equal to the number of classes.It's important to note that the output size also determines the loss function used during training, as the loss function needs to be compatible with the desired output format
+
+
+5)learning rate - controls the step size at which the model parameters are updated during training. The learning rate determines the magnitude of the update to the model parameters, such as weights and biases, based on the gradient of the loss function with respect to those parameters. 
+
+
+basic terms ---> 
+Loss Function - The loss function is a measure of how well the model's predictions match the true values of the output variable. During training, the goal is to minimize the value of the loss function, which is achieved by adjusting the model's parameters. The choice of the loss function depends on the type of problem being solved, such as regression or classification. For example, mean squared error (MSE) loss is commonly used for regression problems, while binary cross-entropy or categorical cross-entropy loss are used for classification problems.
+
+
+optimizer - The optimizer is responsible for updating the model's parameters during training to minimize the value of the loss function. There are various optimization algorithms available, such as gradient descent, stochastic gradient descent (SGD), Adam, and Adagrad, among others. These algorithms differ in how they update the parameters and how they incorporate information from previous iterations to achieve faster convergence and better performance.
+
+
+
+
+
+
 -------------------------------------------------------------------------------------
+TRAIN FILE EXPLAINATION 
+
+Dataset in torch -  class is an abstract class that represents a dataset. It provides a consistent API for accessing individual data samples in the dataset,
+ regardless of the specific format or storage mechanism used for the data.
+
+
+Dataloader -  class is used to load data from a dataset in batches. It provides a convenient way to iterate over the dataset in batches, 
+shuffle the data, and load the data in parallel using multiple worker threads
+
+
+
+
+
+--------------------------------------------------------------------------------------
 
 MODEL FILE EXPLANATION 
 
